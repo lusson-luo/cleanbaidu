@@ -1,0 +1,24 @@
+﻿{
+    "manifest_version": 2,
+    "name": "清理百度",
+    "description":"使用百度时，清除百度的热点搜索、V百科、知道日报这些打扰工作，让人分心的栏目",
+    "version": "1.0",
+    "browser_action":
+    {
+        "default_icon": "icon/icon32.png",
+        "default_popup": "popup.html"
+    },
+    "icons":{
+        "16": "icon/icon32.png",
+        "48": "icon/icon32.png",
+        "128": "icon/icon32.png"
+    },
+    "permissions": [
+        "<all_urls>"
+    ],
+    "content_scripts": [
+    {
+        "matches": ["https://*.baidu.com/*"],
+        "js": ["js/jquery-3.2.1.min.js","js/cleanbaidu.js"]
+    }]
+}
